@@ -12,12 +12,12 @@ t2 = np.linspace(100,255,num=100).astype('uint8')
 t3 = np.linspace(150,255,num=105).astype('uint8')
 
 #concatenating all to create a transformation array
-t=np.concatenate((t1,t2,t3), axis=0).astype('uint8')
-print(t.shape)
+transformation_array=np.concatenate((t1,t2,t3), axis=0).astype('uint8')
+print(transformation_array.shape)
 
 # Display the array
 plt.figure(figsize=(5, 5))
-plt.plot(t)
+plt.plot(transformation_array)
 plt.xlabel("Input intensity")
 plt.xlim(0, 255)
 plt.ylim(0, 255)
@@ -25,7 +25,7 @@ plt.ylabel("Output intensity")
 plt.grid(True)
 plt.show()
 
-g = t[image]
+g = transformation_array[image]
 
 # Display the image
 plt.figure(figsize=(6, 6))
