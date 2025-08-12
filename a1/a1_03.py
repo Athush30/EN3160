@@ -12,7 +12,7 @@ img_rgb = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 L,a,b = cv.split(img_lab)
 
 # Define and apply gamma transformation
-gamma = 0.75
+gamma = 0.65
 t = np.array([(i/255.0)**(gamma)*255 for i in np.arange(0, 256)]).astype('uint8')
 L_modified = cv.LUT(L, t)
 
@@ -53,7 +53,7 @@ plt.ylabel('Frequency')
 plt.xlim([0, 256])
 
 # Display the plots side by side
-plt.tight_layout()  # Adjusts the spacing between subplots for a neat layout
+plt.tight_layout()  
 plt.show()
 
 
